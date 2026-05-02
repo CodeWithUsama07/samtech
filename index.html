@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   </head>
   <body class="bg-[#0B0C0E] text-white">
     <header>
@@ -18,27 +19,27 @@
       <nav class="flex justify-between p-4 border-b-1 border-[#888]">
         <!-- logo -->
         <div class="font-[syne] font-bold text-2xl">
+          <a href="#">
           UK
           <span class="text-xl text-[#a3e635]">.</span>
+          </a>
         </div>
 
         <!-- desktop hyperlinks -->
         <ul class="hidden">
-          <li>Skills</li>
-          <li>Projects</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
         <!-- resume button -->
         <button class="hidden">
-            <a href="" download="">
-                Resume
-            </a>
+          <a href="" download=""> Resume </a>
         </button>
 
-        <!-- mobile hamburger menu -->
-        <div>
+        <!-- mobile hamburger icon -->
+        <div id="hamburgerIcon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-8 h-8 bg-[#a3e635] rounded-md"
@@ -54,31 +55,327 @@
             />
           </svg>
         </div>
+
+        <!-- mobile hamburg menu -->
+         <div class="hidden absolute top-16 bg-black w-full h-full left-0 z-10 py-4 px-8 text-right" id="hamburgerMenu">
+          <ul class="text-xl w-full flex flex-col text-center gap-6">
+            <li class="font-semibold  tracking-wider border-l-2 border-r-2 border-[#888]"><a href="#skills">Skills</a></li>
+            <li class="font-semibold  tracking-wider border-l-2 border-r-2 border-[#888]"><a href="#projects">Projects</a></li>
+            <li class="font-semibold  tracking-wider border-l-2 border-r-2 border-[#888]"><a href="#about">About Me</a></li>
+            <li class="font-semibold  tracking-wider border-l-2 border-r-2 border-[#888]"><a href="#contact">Get in touch</a></li>
+          </ul>
+          <div class="flex flex-col mt-16 text-center text-2xl">
+            Contact:
+            <a href="maito:usamakhalid.tech@gmail.com" class="text-[#a3e635]">usamakhalid.tech@gmail.com</a>
+            <a href="" class="text-[#a3e635]">+92 318 4070878</a>
+          </div>
+         </div>
       </nav>
     </header>
 
     <main>
       <!-- hero section starts -->
-      <section class="w-full h-screen">
-        <div class="mx-auto px-20 py-8">
-            <div class="mb-8 leading-10">
-                <span class="bg-[#a2e6356e] border border-[#a3e635] px-2 py-1 rounded-md">Open for intership</span><br>
-                <span class="bg-[#a2e6356e] border border-[#a3e635] px-2 py-1 rounded-md">Junior Roles</span>
-            </div>
+      <section class="w-full mt-6" id="hero">
+        <div class="mx-auto max-w-80">
+          <div class="mb-4 leading-10 flex gap-2">
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-1 rounded-md animate-pulse"
+              >Open for intership</span
+            ><br />
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-1 rounded-md animate-pulse"
+              >Junior Roles</span
+            >
+          </div>
           <h1 class="text-4xl font-[syne] font-bold mb-4">
             Hi i'm
             <br />
-            <span class="text-[#a3e635] text-6xl">Usama Khalid</span><br>
+            <span class="text-[#a3e635] text-5xl">Usama Khalid</span><br />
             I build things for the web.
           </h1>
-          <p class="text-[#888] mb-8">Front-end developer in training. I craft clean, responsive interfaces using HTML, Tailwind CSS, and JavaScript — with React on the horizon.</p>
+          <p class="text-[#888] mb-8">
+            Front-end developer in training. I craft clean, responsive
+            interfaces using HTML, Tailwind CSS, and JavaScript — with React on
+            the horizon.
+          </p>
           <!-- hero buttons -->
           <div class="flex flex-wrap gap-4">
-            <button class="bg-[#a3e635] text-lg text-black px-4 py-2 rounded-md font-semibold">View Projects</button>
-            <button class="bg-[#131417] text-lg text-white border border-1 px-4 py-2 rounded-md font-semibold">Get in touch</button>
+            <button
+              class="bg-[#a3e635] text-lg text-black px-4 py-2 rounded-md font-semibold"
+            >
+              <a href="#projects"> View Projects </a>
+            </button>
+            <button
+              class="bg-[#131417] text-lg text-white border border-1 px-4 py-2 rounded-md font-semibold"
+            >
+              <a href="#contact"> Get in touch </a>
+            </button>
           </div>
         </div>
       </section>
+
+      <!-- skills section -->
+      <section class="w-full mt-14" id="skills">
+        <div class="mx-auto max-w-80 border-t-1 border-b-1 border-[#888] py-6">
+          <p class="text-[#a3e635]">What i work with</p>
+          <h2 class="text-4xl font-[syne] mb-8">Skills & Tools</h2>
+          <div class="flex flex-wrap gap-4 text-center text-md">
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >HTML</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >CSS (tailwind)</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >JavaScript</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >Wordpress</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >ReactJS (Learning)</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >Figma</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >Photoshop</span
+            >
+            <span
+              class="bg-[#a2e6356e] border border-[#a3e635] px-3 py-2 rounded-2xl"
+              >Git & GitHub</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- section projects -->
+      <section class="w-full mt-14" id="projects">
+        <div class="mx-auto max-w-80">
+          <p class="text-[#a3e635]">What I Have Build</p>
+          <h2 class="text-4xl font-[syne] mb-8">Projects</h2>
+
+          <!-- projects wraper -->
+          <div class="grid grid-rows-3 grid-cols-1 gap-4">
+            <!-- project#1 -->
+            <div class="bg-[#131417] rounded-lg p-6 border border-[#888]">
+              <span class="text-[#888]">01</span>
+              <h2 class="font-[syne] text-xl">Portfolio Website</h2>
+              <p class="text-[#888] mt-4">
+                This site — designed and coded from scratch using HTML and
+                Tailwind CSS. Fully responsive and hosted on Vercel.
+              </p>
+              <div class="mt-4 flex gap-4 text-[#a3e635]">
+                <a href="" class="bg-black px-2 py-1 rounded-md">Live Demo</a>
+                <a href="" class="bg-black px-2 py-1 rounded-md">GitHub</a>
+              </div>
+            </div>
+
+            <!-- project#2 -->
+            <div class="bg-[#131417] rounded-lg p-6 border border-[#888]">
+              <span class="text-[#888]">02</span>
+              <h2 class="font-[syne] text-xl">Todo-App</h2>
+              <p class="text-[#888] mt-4">
+                A mini todo app, coded from scratch using HTML, Tailwind CSS &
+                JavaScript. Stored task in local Storage with add/delete task
+                functionality
+              </p>
+              <div class="mt-4 flex gap-4 text-[#a3e635]">
+                <a href="" class="bg-black px-2 py-1 rounded-md">Live Demo</a>
+                <a href="" class="bg-black px-2 py-1 rounded-md">GitHub</a>
+              </div>
+            </div>
+
+            <!-- project#3 -->
+            <div class="bg-[#131417] rounded-lg p-6 border border-[#888]">
+              <span class="text-[#888]">03</span>
+              <h2 class="font-[syne] text-xl">Product Landing Page</h2>
+              <p class="text-[#888] mt-4">
+                Fully responsive gym towel landing page with a focus on selling
+                real-world product. Makes UI pretty cool.
+              </p>
+              <div class="mt-4 flex gap-4 text-[#a3e635]">
+                <a href="" class="bg-black px-2 py-1 rounded-md">Live Demo</a>
+                <a href="" class="bg-black px-2 py-1 rounded-md">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- about me -->
+      <section class="w-full mt-14" id="about">
+        <div class="mx-auto max-w-80 border-t-1 border-b-1 py-6 border-[#888]">
+          <p class="text-[#a3e635]">Background</p>
+          <h1 class="text-4xl font-[syne] mb-8">About Me</h1>
+
+          <div class="flex flex-col gap-4">
+            <p class="text-[#888]">
+              I'm a data management professional transitioning into front-end
+              development. I'm 26, based in Lahore, Pakistan, and I've been
+              consistently building projects to grow my skills every day.<br /><br />I
+              believe in learning by doing. Every project I build teaches me
+              something new — and I document it all on GitHub to show my
+              progress.<br /><br />Currently focused on mastering JavaScript and
+              React so I can build real, production-ready web apps.
+            </p>
+            <div class="flex flex-col gap-4">
+              <div
+                class="bg-[#131417] rounded-md border border-[#888] px-6 py-3"
+              >
+                <span class="text-4xl text-[#a3e635] font-[syne]">3+</span>
+                <p class="text-[#888]">Projects Build</p>
+              </div>
+              <div
+                class="bg-[#131417] rounded-md border border-[#888] px-6 py-3"
+              >
+                <span class="text-4xl text-[#a3e635] font-[syne]">1+</span>
+                <p class="text-[#888]">Year of Learning Streak</p>
+              </div>
+              <div
+                class="bg-[#131417] rounded-md border border-[#888] px-6 py-3"
+              >
+                <span class="text-4xl text-[#a3e635] font-[syne]">4+</span>
+                <p class="text-[#888]">Core Skills</p>
+              </div>
+              <div
+                class="bg-[#131417] rounded-md border border-[#888] px-6 py-3"
+              >
+                <span class="text-4xl text-[#a3e635] font-[syne]">100%</span>
+                <p class="text-[#888]">Open to work</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact form Section -->
+      <section class="mt-14" id="contact">
+        <div
+          class="bg-[#131417] max-w-80 mx-auto border border-[#888] rounded-lg py-8"
+        >
+          <h2 class="text-2xl font-[syne] text-[#a3e635] text-center">
+            Wants To Hire Me?
+          </h2>
+          <p class="text-center">Lets Get In Touch</p>
+
+          <div class="flex gap-4 justify-center items-center mt-6">
+            <a
+              href="https://www.linkedin.com/in/usama-khalid-709698352/"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 34 34"
+                width="35"
+                height="35"
+              >
+                <rect width="34" height="34" fill="#a3e635" rx="4" />
+                <path
+                  fill="#131417"
+                  d="M10.1 13.3H6.9V27h3.2V13.3zM8.5 11.9c1 0 1.8-.8 1.8-1.8S9.5 8.3 8.5 8.3 6.7 9.1 6.7 10.1s.8 1.8 1.8 1.8zM27.1 18.7c0-3.3-1.8-4.9-4.2-4.9-1.9 0-2.7 1-3.2 1.7v-1.5h-3.2c0 1 .1 13 .1 13h3.2v-7.3c0-.4 0-.8.1-1 .3-.8 1-1.7 2.2-1.7 1.6 0 2.3 1.3 2.3 3.2v6.8h3.2v-7.3z"
+                />
+              </svg>
+            </a>
+            <a href="mailto:usamakhalid.tech@gmail.com">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#a3e635"
+              >
+                <path
+                  d="M2 4h20c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H2c-1.1 
+           0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 13 22 6.01V6H2zm0 
+           12h20V8l-10 7L2 8v10z"
+                />
+              </svg>
+            </a>
+            <a href="https://github.com/CodeWithUsama07" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="#a3e635"
+              >
+                <path
+                  d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 
+           0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.54-3.88-1.54-.52-1.32-1.28-1.67-1.28-1.67
+           -1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.76 2.7 1.25 3.36.96
+           .1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.2-3.07
+           -.12-.29-.52-1.47.12-3.07 0 0 .98-.31 3.2 1.17.93-.26 1.93-.39 2.92-.39.99 
+           0 1.99.13 2.92.39 2.22-1.48 3.2-1.17 3.2-1.17.64 1.6.24 2.78.12 3.07.75.8 
+           1.2 1.82 1.2 3.07 0 4.4-2.68 5.37-5.24 5.65.41.36.77 1.08.77 2.18 
+           0 1.57-.01 2.83-.01 3.21 0 .3.21.66.79.55C20.71 21.39 24 17.08 24 
+           12c0-6.35-5.15-11.5-12-11.5z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <form action="Post" class="mt-8 px-4" id="contactform">
+            <div class="mt-4">
+              <label for="fullname">Full Name:</label>
+              <input
+                type="text"
+                name="fullname"
+                id=""
+                required
+                placeholder="Your Name..."
+                class="border border-[#888] rounded-lg p-2 w-full"
+              />
+            </div>
+
+            <div class="mt-4">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id=""
+                required
+                placeholder="Your Email..."
+                class="border border-[#888] rounded-lg p-2 w-full"
+              />
+            </div>
+
+            <div class="mt-4">
+              <label for="">About Your Project:</label>
+              <textarea
+                name=""
+                id=""
+                class="border border-[#888] rounded-lg p-2 w-full"
+                rows="6"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-[#a3e635] px-4 py-2 text-[#131417] text-lg rounded-lg font-semibold mt-4"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
     </main>
+
+    <!-- footer  -->
+    <footer class="border-t-1 border-[#888] py-4 mt-14 text-center">
+      <h2>
+        Design & Developed by
+        <span class="text-[#a3e635] text-xl">Usama Khalid</span>
+      </h2>
+      <p class="text-[#888]">@2026. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
